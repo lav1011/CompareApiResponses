@@ -1,0 +1,52 @@
+
+
+Prerequisites:-
+1) Install Java
+2) Install Gradle
+
+
+Here is my build.gradle dependency
+
+plugins {
+    id 'java'
+}
+
+group 'CompareApiResponses '
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile group: 'org.testng', name: 'testng', version: '6.10'
+    compile group: 'io.rest-assured', name: 'rest-assured', version: '3.0.7'
+}
+
+
+
+ Instructions :-
+1) I have included all the dependency im build.gradle.
+2) I have pasted all the endpoints file in CompareApiResponses/src/test/resources folder. If you want to add any open endpoint you can add.
+3) There are total 2 Files i have used in this framework.
+   a)  Under ApiServices/CommonUtils package In ApiUtils i have written the business logic.
+   b)  Main test cases you can run from FileComprison.java file.
+   c)  I have written two functions one for reading the file(fileReader) and the other to hit the API endpoint and compare the json response result(compareJsonResponse)\
+
+4) I can try to cover other scenarios but logic needs to be changes. I am extracting Json first Object and comparing with the other Objects. This Test Will run for open source API's like
+   https://reqres.in/api/users/5  and https://reqres.in/api/users?page=1.
+
+  If you want to give or test the other API's You need to change
+  the logic to extract the required json object in line 54,55 in ApiUtils.java (Pass the required string).
+
+
+5) Last but not the least i am still a learner. Please pass on the valuable feedback so that i can improve and adapt the given suggestions.
+
+
+
+Thank You.
+
+AUTHOR
+LAV SHARMA
